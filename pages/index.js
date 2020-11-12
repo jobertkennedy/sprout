@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 function Contador(props){
     const [contador, setContador] = useState(1)
-
     function addContador(){
         setContador(contador + 1)
     }
@@ -12,20 +11,30 @@ function Contador(props){
     }
     
     return (
-        <div>
-        <div>{contador}</div>
-        <div id="buttonSect">
-        <button onClick={addContador}>Adicionar</button>
-        <button onClick={removeContador}>Remover</button>
+        <div id="contador">
+        <div id="sprouts">{contador}</div>
+        <div id="btnSect">
+        <button onClick={addContador} id="add">Add</button>
+        <button onClick={removeContador} id="rm">Remove</button>
         </div>
+        </div>
+    )
+}
+
+function Header(Props){
+    return (
+        <div>
+            <h1 id="header-title">
+                {Props.children}
+            </h1>
         </div>
     )
 }
 
 function Main(){
     return (
-        <div>
-        <h2>How Many Sprouts?</h2>
+        <div id="container">
+        <Header>How Many Sprouts?</Header>
         < Contador/>
         </div>
     )
