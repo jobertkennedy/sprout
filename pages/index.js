@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Head from 'next/head'
 
 
 function Contador(props){
@@ -34,6 +35,9 @@ function Header(Props){
 function Main(){
     return (
         <div id="container">
+        <Head>
+        <title>Sprouts Counter</title>
+        </Head>
         <Header>How Many Sprouts?</Header>
         < Contador/>
         </div>
